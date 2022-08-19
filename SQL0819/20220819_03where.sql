@@ -180,7 +180,11 @@ select count(*) from sungjuk where aver is not null;
 --문8) 비어있는 총점과 평균을 모두 구하시오
 update sungjuk
 set tot=kor+eng+mat, aver=(kor+eng+mat)/3
+where tot is null or aver is null;
 
+select* from sungjuk;
+
+commit;
 
 
 
