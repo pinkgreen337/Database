@@ -1,83 +1,83 @@
 
-i:\java202207\database\20220826_01Å×ÀÌºíÁ¶ÀÎ.sql
+i:\java202207\database\20220826_01í…Œì´ë¸”ì¡°ì¸.sql
 ////////////////////////////////////////////////////////////////////////////////
 
-¡Ü [Å×ÀÌºí Á¶ÀÎ]
-    - ¿©·¯ Å×ÀÌºíÀ» ÇÏ³ªÀÇ Å×ÀÌºíÃ³·³ »ç¿ëÇÏ´Â Á¶ÀÎ
-    - µÎ °³ ÀÌ»óÀÇ Å×ÀÌºíÀ» °áÇÕÇÏ¿© µ¥ÀÌÅÍ¸¦ ÃßÃâÇÏ´Â ±â¹ı
-    - µÎ Å×ÀÌºíÀÇ °øÅë°ªÀ» ÀÌ¿ëÇÏ¿© Ä®·³À» Á¶ÇÕÇÏ´Â ¼ö´Ü
+â— [í…Œì´ë¸” ì¡°ì¸]
+    - ì—¬ëŸ¬ í…Œì´ë¸”ì„ í•˜ë‚˜ì˜ í…Œì´ë¸”ì²˜ëŸ¼ ì‚¬ìš©í•˜ëŠ” ì¡°ì¸
+    - ë‘ ê°œ ì´ìƒì˜ í…Œì´ë¸”ì„ ê²°í•©í•˜ì—¬ ë°ì´í„°ë¥¼ ì¶”ì¶œí•˜ëŠ” ê¸°ë²•
+    - ë‘ í…Œì´ë¸”ì˜ ê³µí†µê°’ì„ ì´ìš©í•˜ì—¬ ì¹¼ëŸ¼ì„ ì¡°í•©í•˜ëŠ” ìˆ˜ë‹¨
     
     
-    Çü½Ä) 
-            select Ä®·³
-            from Å×ÀÌºí1 join Å×ÀÌºí2
-            on Á¶°ÇÀı;                             -- ANSI(Ç¥ÁØ) SQL¹®
+    í˜•ì‹) 
+            select ì¹¼ëŸ¼
+            from í…Œì´ë¸”1 join í…Œì´ë¸”2
+            on ì¡°ê±´ì ˆ;                             -- ANSI(í‘œì¤€) SQLë¬¸
 
-            select Ä®·³
-            from Å×ÀÌºí1, Å×ÀÌºí2
-            on Á¶°ÇÀı;                             -- Oracle DB SQL¹®
+            select ì¹¼ëŸ¼
+            from í…Œì´ë¸”1, í…Œì´ë¸”2
+            on ì¡°ê±´ì ˆ;                             -- Oracle DB SQLë¬¸
 
-            select T1.*, T2.*                     -- T1.¸ğµçÄ®·³, T2.¸ğµçÄ®·³
+            select T1.*, T2.*                     -- T1.ëª¨ë“ ì¹¼ëŸ¼, T2.ëª¨ë“ ì¹¼ëŸ¼
             from T1 join T2
-            on T1.x=T2.x;                         -- Å×ÀÌºí¸í.Ä®·³¸í
+            on T1.x=T2.x;                         -- í…Œì´ë¸”ëª….ì¹¼ëŸ¼ëª…
 
             select T1.*, T2.*, T3.*
             from T1 join T2
-            on T1.x=T2.x join T3                  -- 3°³ Å×ÀÌºí Á¶ÀÎ
+            on T1.x=T2.x join T3                  -- 3ê°œ í…Œì´ë¸” ì¡°ì¸
             on T1.y=T3.y;
 
-            select T1.*, T2.*, T3.*, T4.*         -- 4°³ Å×ÀÌºí Á¶ÀÎ
+            select T1.*, T2.*, T3.*, T4.*         -- 4ê°œ í…Œì´ë¸” ì¡°ì¸
             from T1 join T2                       
             on T1.x=T2.x join T3               
             on T1.y=T3.y join T4
             on T1.z=T4.z;
 
 
-¡Ü Á¶°ÇÀı : whereÁ¶°ÇÀı, havingÁ¶°ÇÀı, onÁ¶°ÇÀı
+â— ì¡°ê±´ì ˆ : whereì¡°ê±´ì ˆ, havingì¡°ê±´ì ˆ, onì¡°ê±´ì ˆ
 
 
-¡Ü ¹°¸®Àû Å×ÀÌºí°ú ³í¸®Àû Å×ÀÌºíÀº ¼­·Î µ¿µîÇÑ °ü°èÀÌ´Ù
-   - ¹°¸®Àû Å×ÀÌºí : ½ÇÁ¦ create tableÇÑ Å×ÀÌºí
-   - ³í¸®Àû Å×ÀÌºí : SQL¹®¿¡ ÀÇÇØ °¡°øµÈ Å×ÀÌºí
+â— ë¬¼ë¦¬ì  í…Œì´ë¸”ê³¼ ë…¼ë¦¬ì  í…Œì´ë¸”ì€ ì„œë¡œ ë™ë“±í•œ ê´€ê³„ì´ë‹¤
+   - ë¬¼ë¦¬ì  í…Œì´ë¸” : ì‹¤ì œ create tableí•œ í…Œì´ë¸”
+   - ë…¼ë¦¬ì  í…Œì´ë¸” : SQLë¬¸ì— ì˜í•´ ê°€ê³µëœ í…Œì´ë¸”
    
    select * from tb_student;
    select count(*) from tb_student;
 ////////////////////////////////////////////////////////////////////////
 
 
-¡Ü inner join ¿¬½À
+â— inner join ì—°ìŠµ
 
--- ÇĞ¹øÀ» ±âÁØÀ¸·Î ¼ö°­Å×ÀÌºí°ú ÇĞ»ıÅ×ÀÌºí Á¶ÀÎ
+-- í•™ë²ˆì„ ê¸°ì¤€ìœ¼ë¡œ ìˆ˜ê°•í…Œì´ë¸”ê³¼ í•™ìƒí…Œì´ë¸” ì¡°ì¸
 select tb_sugang.*, tb_student.*
 from tb_sugang join tb_student
 on tb_sugang.hakno = tb_student.hakno;
 
--- µÎ Å×ÀÌºí °£ÀÇ ±³ÁıÇÕ Á¶ÀÎ. inner¶ó´Â ´Ü¾î´Â »ı·«°¡´É. °¡Àå ±âº»
+-- ë‘ í…Œì´ë¸” ê°„ì˜ êµì§‘í•© ì¡°ì¸. innerë¼ëŠ” ë‹¨ì–´ëŠ” ìƒëµê°€ëŠ¥. ê°€ì¥ ê¸°ë³¸
 select tb_sugang.*, tb_student.*
 from tb_sugang inner join tb_student
 on tb_sugang.hakno = tb_student.hakno;
 
 
--- ¼ö°­½ÅÃ»ÇÑ ÇĞ»ıµéÀÇ ÇĞ¹ø, °ú¸ñÄÚµå, ÀÌ¸§, ÀÌ¸ŞÀÏÀ» Á¶È¸ÇÏ½Ã¿À
+-- ìˆ˜ê°•ì‹ ì²­í•œ í•™ìƒë“¤ì˜ í•™ë²ˆ, ê³¼ëª©ì½”ë“œ, ì´ë¦„, ì´ë©”ì¼ì„ ì¡°íšŒí•˜ì‹œì˜¤
 select tb_sugang.*, tb_student.uname, tb_student.email
 from tb_sugang inner join tb_student
 on tb_sugang.hakno = tb_student.hakno;
 
 
--- °ú¸ñÄÚµå¸¦ ±âÁØÀ¸·Î ¼ö°­Å×ÀÌºí°ú °ú¸ñÅ×ÀÌºí Á¶ÀÎ
+-- ê³¼ëª©ì½”ë“œë¥¼ ê¸°ì¤€ìœ¼ë¡œ ìˆ˜ê°•í…Œì´ë¸”ê³¼ ê³¼ëª©í…Œì´ë¸” ì¡°ì¸
 select tb_sugang.*, tb_gwamok.gname, tb_gwamok.ghakjum
 from tb_sugang inner join tb_gwamok
 on tb_sugang.gcode = tb_gwamok.gcode;
 
 
--- 3°³ Å×ÀÌºí Á¶ÀÎ : ¼ö°­Å×ÀÌºí + ÇĞ»ıÅ×ÀÌºí(ÀÌ¸§) + °ú¸ñÅ×ÀÌºí(°ú¸ñ¸í)
+-- 3ê°œ í…Œì´ë¸” ì¡°ì¸ : ìˆ˜ê°•í…Œì´ë¸” + í•™ìƒí…Œì´ë¸”(ì´ë¦„) + ê³¼ëª©í…Œì´ë¸”(ê³¼ëª©ëª…)
 select tb_sugang.*, tb_student.uname, tb_gwamok.gname
 from tb_sugang join tb_student
 on tb_sugang.hakno=tb_student.hakno join tb_gwamok
 on tb_sugang.gcode=tb_gwamok.gcode;
 
 
--- Å×ÀÌºí¸íÀÇ alias(º°Äª)µµ °¡´ÉÇÏ´Ù
+-- í…Œì´ë¸”ëª…ì˜ alias(ë³„ì¹­)ë„ ê°€ëŠ¥í•˜ë‹¤
 select SU.*, ST.uname, ST.email
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno;
@@ -92,14 +92,14 @@ on SU.hakno=ST.hakno join tb_gwamok GW
 on SU.gcode=GW.gcode;
 
 
--- Á¶È¸½Ã Å×ÀÌºí°£¿¡ Áßº¹µÇÁö ¾ÊÀº Ä®·³¸íÀº Å×ÀÌºí¸íÀ» »ı·«ÇÒ ¼ö ÀÖ´Ù
+-- ì¡°íšŒì‹œ í…Œì´ë¸”ê°„ì— ì¤‘ë³µë˜ì§€ ì•Šì€ ì¹¼ëŸ¼ëª…ì€ í…Œì´ë¸”ëª…ì„ ìƒëµí•  ìˆ˜ ìˆë‹¤
 select SU.*, uname, email, gname, ghakjum
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno join tb_gwamok GW
 on SU.gcode=GW.gcode;
 
--- Áßº¹µÇ´Â Ä®·³¸íÀº ¼Ò¼Ó Å×ÀÌºí¸íÀ» Á¤È®È÷ ¸í½ÃÇØ¾ß ÇÑ´Ù
--- ERROR. ORA-00918: ¿­ÀÇ Á¤ÀÇ°¡ ¾Ö¸ÅÇÕ´Ï´Ù
+-- ì¤‘ë³µë˜ëŠ” ì¹¼ëŸ¼ëª…ì€ ì†Œì† í…Œì´ë¸”ëª…ì„ ì •í™•íˆ ëª…ì‹œí•´ì•¼ í•œë‹¤
+-- ERROR. ORA-00918: ì—´ì˜ ì •ì˜ê°€ ì• ë§¤í•©ë‹ˆë‹¤
 select hakno,gcode,uname, email, gname, ghakjum
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno join tb_gwamok GW
@@ -112,65 +112,65 @@ on SU.gcode=GW.gcode;
 //////////////////////////////////////////////////////////////////
 
 
-¡Ü [Å×ÀÌºí Á¶ÀÎ ¿¬½À]
+â— [í…Œì´ë¸” ì¡°ì¸ ì—°ìŠµ]
 
--- ÀüÃ¼ Çà °³¼ö
-select count(*) from tb_student;    -- 6°³
-select count(*) from tb_gwamok;     -- 9°³
-select count(*) from tb_sugang;     -- 13°³
+-- ì „ì²´ í–‰ ê°œìˆ˜
+select count(*) from tb_student;    -- 6ê°œ
+select count(*) from tb_gwamok;     -- 9ê°œ
+select count(*) from tb_sugang;     -- 13ê°œ
 /////////////////////////////////////////////////////////////////////
 
-¹®1)¼ö°­½ÅÃ»À» ÇÑ ÇĞ»ıµé Áß¿¡¼­ 'Á¦ÁÖ'¿¡ »ç´Â ÇĞ»ıµé¸¸ ÇĞ¹ø, ÀÌ¸§, ÁÖ¼Ò¸¦ Á¶È¸ÇÏ½Ã¿À
--- ¼ö°­½ÅÃ»ÇÑ ÇĞ»ıµé ¸ñ·Ï Á¶È¸
+ë¬¸1)ìˆ˜ê°•ì‹ ì²­ì„ í•œ í•™ìƒë“¤ ì¤‘ì—ì„œ 'ì œì£¼'ì— ì‚¬ëŠ” í•™ìƒë“¤ë§Œ í•™ë²ˆ, ì´ë¦„, ì£¼ì†Œë¥¼ ì¡°íšŒí•˜ì‹œì˜¤
+-- ìˆ˜ê°•ì‹ ì²­í•œ í•™ìƒë“¤ ëª©ë¡ ì¡°íšŒ
 select * from tb_sugang;
 
 select SU.hakno, SU.gcode, ST.uname, ST.address
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno
-where ST.address='Á¦ÁÖ';
+where ST.address='ì œì£¼';
 
--- °¡°øµÈ ³í¸®Àû Å×ÀÌºíÀÇ ÀÌ¸§À» AA¶ó°í ÁöÁ¤ÇÏ°í, ´Ù½Ã Àç°¡°ø ÇÒ ¼ö ÀÖ´Ù
+-- ê°€ê³µëœ ë…¼ë¦¬ì  í…Œì´ë¸”ì˜ ì´ë¦„ì„ AAë¼ê³  ì§€ì •í•˜ê³ , ë‹¤ì‹œ ì¬ê°€ê³µ í•  ìˆ˜ ìˆë‹¤
 select AA.hakno, AA.gcode, AA.uname, AA.address
 from (
        select SU.hakno, SU.gcode, uname, address
        from tb_sugang SU join tb_student ST
        on SU.hakno=ST.hakno
 ) AA
-where AA.address='Á¦ÁÖ';
+where AA.address='ì œì£¼';
 
 
--- AAº°Äª »ı·« °¡´É
+-- AAë³„ì¹­ ìƒëµ ê°€ëŠ¥
 select AA.hakno, AA.gcode, AA.uname, AA.address
 from (
        select SU.hakno, SU.gcode, uname, address
        from tb_sugang SU join tb_student ST
        on SU.hakno=ST.hakno
 )
-where AA.address='Á¦ÁÖ';
+where AA.address='ì œì£¼';
 
 
 
-¹®2) Áö¿ªº°·Î ¼ö°­½ÅÃ» ÀÎ¿ø¼ö, Áö¿ªÀ» Á¶È¸ÇÏ½Ã¿À
-     ¼­¿ï 2¸í
-     Á¦ÁÖ 1¸í
--- °­»ç´Ô ´ä¾È     
---1) ¼ö°­Å×ÀÌºí Á¶È¸
+ë¬¸2) ì§€ì—­ë³„ë¡œ ìˆ˜ê°•ì‹ ì²­ ì¸ì›ìˆ˜, ì§€ì—­ì„ ì¡°íšŒí•˜ì‹œì˜¤
+     ì„œìš¸ 2ëª…
+     ì œì£¼ 1ëª…
+-- ê°•ì‚¬ë‹˜ ë‹µì•ˆ     
+--1) ìˆ˜ê°•í…Œì´ë¸” ì¡°íšŒ
 select * from tb_sugang;
 
---2) ¼ö°­½ÅÃ»ÇÑ ÇĞ»ıµéÀÇ ¸í´Ü Á¶È¸(ÇĞ¹ø)
+--2) ìˆ˜ê°•ì‹ ì²­í•œ í•™ìƒë“¤ì˜ ëª…ë‹¨ ì¡°íšŒ(í•™ë²ˆ)
 select hakno from tb_sugang order by hakno;
 select distinct(hakno) from tb_sugang order by hakno;
-select hakno from tb_sugang group by hakno;  --group byÀıÀº ³»ºÎÀûÀ¸·Î Á¤·ÄÀ» °¡Áö°í ÀÖÀ½
+select hakno from tb_sugang group by hakno;  --group byì ˆì€ ë‚´ë¶€ì ìœ¼ë¡œ ì •ë ¬ì„ ê°€ì§€ê³  ìˆìŒ
 
---3) ¼ö°­½ÅÃ»ÇÑ ÇĞ¹ø(AA)µéÀÇ ÁÖ¼Ò¸¦ ÇĞ»ıÅ×ÀÌºí¿¡¼­ °¡Á®¿À±â
+--3) ìˆ˜ê°•ì‹ ì²­í•œ í•™ë²ˆ(AA)ë“¤ì˜ ì£¼ì†Œë¥¼ í•™ìƒí…Œì´ë¸”ì—ì„œ ê°€ì ¸ì˜¤ê¸°
 select AA.hakno, ST.address
 from (
        select hakno from tb_sugang group by hakno
 ) AA join tb_student ST 
 on AA.hakno=ST.hakno;
 
---4) 3)ÀÇ °á°ú¸¦ BBÅ×ÀÌºí·Î ¸¸µç ÈÄ ÁÖ¼Òº°·Î ±×·ìÈ­ÇÏ°í Çà °³¼ö ±¸ÇÏ±â
-select BB.address, count(*) || '¸í' as cnt
+--4) 3)ì˜ ê²°ê³¼ë¥¼ BBí…Œì´ë¸”ë¡œ ë§Œë“  í›„ ì£¼ì†Œë³„ë¡œ ê·¸ë£¹í™”í•˜ê³  í–‰ ê°œìˆ˜ êµ¬í•˜ê¸°
+select BB.address, count(*) || 'ëª…' as cnt
 from (
       select AA.hakno, ST.address
       from (
@@ -180,28 +180,28 @@ from (
       ) BB
 group by BB.address;
 
--- ³» ´ä¾È
+-- ë‚´ ë‹µì•ˆ
 select ST.address, count(distinct(ST.hakno))
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno
 group by address;
 
 
-¹®3) °ú¸ñº° ¼ö°­ ½ÅÃ» ÀÎ¿ø¼ö, °ú¸ñÄÚµå, °ú¸ñ¸íÀ» Á¶È¸ÇÏ½Ã¿À 
-     d001 HTML    2¸í 
-     d002 Æ÷Åä¼¥   1¸í
-     p001 OOP     2¸í
+ë¬¸3) ê³¼ëª©ë³„ ìˆ˜ê°• ì‹ ì²­ ì¸ì›ìˆ˜, ê³¼ëª©ì½”ë“œ, ê³¼ëª©ëª…ì„ ì¡°íšŒí•˜ì‹œì˜¤ 
+     d001 HTML    2ëª… 
+     d002 í¬í† ìƒµ   1ëª…
+     p001 OOP     2ëª…
      
---1) ¼ö°­Å×ÀÌºí¿¡¼­ °ú¸ñÄÚµå Á¤·ÄÇØ¼­ Á¶È¸ÇÏ±â
+--1) ìˆ˜ê°•í…Œì´ë¸”ì—ì„œ ê³¼ëª©ì½”ë“œ ì •ë ¬í•´ì„œ ì¡°íšŒí•˜ê¸°
 select * from tb_sugang order by gcode;
 
---2) ¼ö°­Å×ÀÌºí¿¡¼­ °ú¸ñÄÚµå°¡ µ¿ÀÏÇÑ ÇàÀ» ±×·ì
+--2) ìˆ˜ê°•í…Œì´ë¸”ì—ì„œ ê³¼ëª©ì½”ë“œê°€ ë™ì¼í•œ í–‰ì„ ê·¸ë£¹
 select gcode, count(*)
 from tb_sugang
 group by gcode;
 
---3) 2)ÀÇ °á°ú¸¦ AAÅ×ÀÌºí·Î »ı¼ºÇÏ°í °ú¸ñÅ×ÀÌºíÀ» join
-select AA.gcode, GW.gname, concat(AA.cnt,'¸í')
+--3) 2)ì˜ ê²°ê³¼ë¥¼ AAí…Œì´ë¸”ë¡œ ìƒì„±í•˜ê³  ê³¼ëª©í…Œì´ë¸”ì„ join
+select AA.gcode, GW.gname, concat(AA.cnt,'ëª…')
 from (
         select gcode, count(*)as cnt
         from tb_sugang
@@ -210,8 +210,8 @@ from (
 on AA.gcode=GW.gcode
 order by AA.gcode;
 
---³» ´ä¾È
-select GW.gcode, gname, count(*) || '¸í'
+--ë‚´ ë‹µì•ˆ
+select GW.gcode, gname, count(*) || 'ëª…'
 from (select SU.gcode, SU.hakno
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno ) BB
@@ -220,20 +220,20 @@ on BB.gcode=GW.gcode group by GW.gcode, gname;
 //////////////////////////////////////////////////////////////////////////
 
 
-¹®4) ÇĞ¹øº° ¼ö°­½ÅÃ»°ú¸ñÀÇ ÃÑÇĞÁ¡À» ÇĞ¹øº°¼øÀ¸·Î Á¶È¸ÇÏ½Ã¿À
-     g1001  È«±æµ¿  9ÇĞÁ¡
-     g1002  È«±æµ¿  6ÇĞÁ¡
-     g1005  Áø´Ş·¡  9ÇĞÁ¡
--- °­»ç´Ô ´ä¾È
---1) ¼ö°­Å×ÀÌºí¿¡¼­ ÇĞ¹øº°·Î Á¶È¸
+ë¬¸4) í•™ë²ˆë³„ ìˆ˜ê°•ì‹ ì²­ê³¼ëª©ì˜ ì´í•™ì ì„ í•™ë²ˆë³„ìˆœìœ¼ë¡œ ì¡°íšŒí•˜ì‹œì˜¤
+     g1001  í™ê¸¸ë™  9í•™ì 
+     g1002  í™ê¸¸ë™  6í•™ì 
+     g1005  ì§„ë‹¬ë˜  9í•™ì 
+-- ê°•ì‚¬ë‹˜ ë‹µì•ˆ
+--1) ìˆ˜ê°•í…Œì´ë¸”ì—ì„œ í•™ë²ˆë³„ë¡œ ì¡°íšŒ
 select hakno, gcode from tb_sugang order by hakno;
 
---2) ¼ö°­Å×ÀÌºí¿¡ °ú¸ñÄÚµå°¡ ÀÏÄ¡ÇÏ´Â ÇĞÁ¡À» °ú¸ñÅ×ÀÌºí¿¡¼­ °¡Á®¿Í¼­ ºÙÀÌ±â
+--2) ìˆ˜ê°•í…Œì´ë¸”ì— ê³¼ëª©ì½”ë“œê°€ ì¼ì¹˜í•˜ëŠ” í•™ì ì„ ê³¼ëª©í…Œì´ë¸”ì—ì„œ ê°€ì ¸ì™€ì„œ ë¶™ì´ê¸°
 select SU.hakno, SU.gcode, GW.ghakjum
 from tb_sugang SU join tb_gwamok GW
 on SU.gcode=GW.gcode;
 
-  --3) 2)ÀÇ °á°ú¸¦ AAÅ×ÀÌºí·Î ¸¸µé°í ÇĞ¹øº°·Î ±×·ìÈ­ÇÑ ÈÄ, ÇĞÁ¡ÀÇ ÇÕ°è¸¦ ±¸ÇÏ±â 
+  --3) 2)ì˜ ê²°ê³¼ë¥¼ AAí…Œì´ë¸”ë¡œ ë§Œë“¤ê³  í•™ë²ˆë³„ë¡œ ê·¸ë£¹í™”í•œ í›„, í•™ì ì˜ í•©ê³„ë¥¼ êµ¬í•˜ê¸° 
   select AA.hakno, sum(AA.ghakjum), as hap
   from (
   select SU.hakno, SU.gcode, GW.ghakjum
@@ -242,8 +242,8 @@ on SU.gcode=GW.gcode;
   ) AA
   group by AA.hakno
   
---4) 3)ÀÇ °á°ú¸¦ BBÅ×ÀÌºí·Î ¸¸µé°í, ÇĞ¹øÀ» ±âÁØÀ¸·Î ÇĞ»ıÅ×ÀÌºí¿¡¼­ ÀÌ¸§ °¡Á®¿Í¼­ ºÙÀÌ±â
-select BB.hakno, concat(BB.hap, 'ÇĞÁ¡'), ST.uname
+--4) 3)ì˜ ê²°ê³¼ë¥¼ BBí…Œì´ë¸”ë¡œ ë§Œë“¤ê³ , í•™ë²ˆì„ ê¸°ì¤€ìœ¼ë¡œ í•™ìƒí…Œì´ë¸”ì—ì„œ ì´ë¦„ ê°€ì ¸ì™€ì„œ ë¶™ì´ê¸°
+select BB.hakno, concat(BB.hap, 'í•™ì '), ST.uname
 from (
         select AA.hakno, sum(AA.ghakjum) as hap
   from (
@@ -256,15 +256,15 @@ from (
   on BB.hakno=ST.hakno;
 -----------------------------------------------------------------
 
-¹®4)ÀÇ ¶Ç ´Ù¸¥ ¹æ¹ı
---1) ¼ö°­Å×ÀÌºí + ÇĞ»ıÅ×ÀÌºí + °ú¸ñÅ×ÀÌºí 3°³ Å×ÀÌºí ÇÑ²¨¹ø¿¡ Á¶ÀÎ
+ë¬¸4)ì˜ ë˜ ë‹¤ë¥¸ ë°©ë²•
+--1) ìˆ˜ê°•í…Œì´ë¸” + í•™ìƒí…Œì´ë¸” + ê³¼ëª©í…Œì´ë¸” 3ê°œ í…Œì´ë¸” í•œêº¼ë²ˆì— ì¡°ì¸
 select SU.hakno, SU.gcode, ST.uname, GW.ghakjum
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno join tb_gwamok GW
 on SU.gcode=GW.gcode
 order by SU.hakno;
 
---2) 1Â÷ ±×·ì(ÇĞ¹ø), 2Â÷ ±×·ì(ÀÌ¸§)
+--2) 1ì°¨ ê·¸ë£¹(í•™ë²ˆ), 2ì°¨ ê·¸ë£¹(ì´ë¦„)
 select SU.hakno, ST.uname, sum(GW.ghakjum)
 from tb_sugang SU join tb_student ST
 on SU.hakno=ST.hakno join tb_gwamok GW
@@ -273,9 +273,9 @@ group by SU.hakno, ST.uname;
 
 
 
--- ³» ´ä¾È
-select AA.hakno, uname, ÃÑÇĞÁ¡
-from (select SU.hakno, sum(ghakjum)|| 'ÇĞÁ¡' ÃÑÇĞÁ¡
+-- ë‚´ ë‹µì•ˆ
+select AA.hakno, uname, ì´í•™ì 
+from (select SU.hakno, sum(ghakjum)|| 'í•™ì ' ì´í•™ì 
       from tb_sugang SU join tb_gwamok GW
       on SU.gcode=GW.gcode
       group by SU.hakno) AA join tb_student ST
@@ -283,25 +283,25 @@ on AA.hakno=ST.hakno;
 
 
 
-¹®5) ÇĞ¹ø g1001ÀÌ ¼ö°­½ÅÃ»ÇÑ °ú¸ñÀ» °ú¸ñÄÚµåº°·Î Á¶È¸ÇÏ½Ã¿À
+ë¬¸5) í•™ë²ˆ g1001ì´ ìˆ˜ê°•ì‹ ì²­í•œ ê³¼ëª©ì„ ê³¼ëª©ì½”ë“œë³„ë¡œ ì¡°íšŒí•˜ì‹œì˜¤
      g1001  p001  OOP
      g1001  p003  JSP  
      g1001  d001  HTML
 select ST.hakno, GW.gcode, gname
 from tb_student ST join tb_sugang SU
 on ST.hakno=SU.hakno join tb_gwamok GW
-on SU.gcode=GW.gcode where ST.hakno='g1001';    --½ÇÁ¦ ÀÚ¹ÙÄÚµå¿¡¼­ ÇĞ¹øÀ» º¯¼öÃ³¸®ÇÑ´Ù
+on SU.gcode=GW.gcode where ST.hakno='g1001';    --ì‹¤ì œ ìë°”ì½”ë“œì—ì„œ í•™ë²ˆì„ ë³€ìˆ˜ì²˜ë¦¬í•œë‹¤
 ////////////////////////////////////////////////////////////////////
      
      
-¹®6)¼ö°­½ÅÃ»À» ÇÑ ÇĞ»ıµéÀÇ ÇĞ¹ø, ÀÌ¸§ Á¶È¸
---³» ´äº¯
+ë¬¸6)ìˆ˜ê°•ì‹ ì²­ì„ í•œ í•™ìƒë“¤ì˜ í•™ë²ˆ, ì´ë¦„ ì¡°íšŒ
+--ë‚´ ë‹µë³€
 select distinct(ST.hakno), uname
 from tb_student ST join tb_sugang SU
 on ST.hakno=SU.hakno order by ST.hakno;
 
---°­»ç´Ô ´äº¯
---1) ¼ö°­½ÅÃ»À» ÇÑ ÇĞ»ıµéÀÇ ÇĞ¹ø Á¶È¸
+--ê°•ì‚¬ë‹˜ ë‹µë³€
+--1) ìˆ˜ê°•ì‹ ì²­ì„ í•œ í•™ìƒë“¤ì˜ í•™ë²ˆ ì¡°íšŒ
 select hakno from tb_sugang;
 select distinct(hakno) from tb_sugang;
 select hakno from tb_sugang order by hakno;
@@ -321,32 +321,32 @@ from tb_student
 where hakno in (select hakno from tb_sugang group by hakno);
 //////////////////////////////////////////////////////////////////////
 
-¹®7)¼ö°­½ÅÃ»À» ÇÏÁö ¾ÊÀº ÇĞ»ıµéÀÇ ÇĞ¹ø, ÀÌ¸§ Á¶È¸
---³» ´äº¯
+ë¬¸7)ìˆ˜ê°•ì‹ ì²­ì„ í•˜ì§€ ì•Šì€ í•™ìƒë“¤ì˜ í•™ë²ˆ, ì´ë¦„ ì¡°íšŒ
+--ë‚´ ë‹µë³€
 select hakno,uname from tb_student
 where hakno not in (select distinct(ST.hakno)
 from tb_student ST join tb_sugang SU
 on ST.hakno=SU.hakno) order by hakno;
 
---°­»ç´Ô ´äº¯
+--ê°•ì‚¬ë‹˜ ë‹µë³€
 select hakno, uname
 from tb_student
 where hakno not in (select hakno from tb_sugang group by hakno);
 
 
-¹®8) ´ÙÀ½ ÀÌ¸ŞÀÏÀ» ¾²´Â ÇĞ»ıÀº ´©±¸°í ÇĞÁ¡Àº ¸îÇĞÁ¡
+ë¬¸8) ë‹¤ìŒ ì´ë©”ì¼ì„ ì“°ëŠ” í•™ìƒì€ ëˆ„êµ¬ê³  í•™ì ì€ ëª‡í•™ì 
 select * from tb_sugang;
 select * from tb_gwamok;
 select * from tb_student;
 
-select AA.hakno, AA.uname, AA.email, sum(ghakjum)as ÃÑÇĞÁ¡
+select AA.hakno, AA.uname, AA.email, sum(ghakjum)as ì´í•™ì 
 from (select ST.hakno, ST.uname, SU.gcode, ST.email, ga
 from tb_student ST join tb_sugang SU
 on ST.hakno=SU.hakno where ST.email like '%daum%') AA join tb_gwamok GW
 on AA.gcode=GW.gcode;
 
 
-¹®9) º¹¼öÀü°øÀ» ÇÏ°í ÀÖ´Â ÇĞ»ıµéÀº ´©±¸
+ë¬¸9) ë³µìˆ˜ì „ê³µì„ í•˜ê³  ìˆëŠ” í•™ìƒë“¤ì€ ëˆ„êµ¬
 select uname, AA.hakno, GW.gname
 (select uname, ST.hakno
 from tb_student ST join tb_sugang SU
