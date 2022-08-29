@@ -2,50 +2,50 @@
 i:\java202207\database\20220829_01_rownum.sql
 ///////////////////////////////////////////////////////////////////////////////
 
-¡Ü [¸ðÁ¶Ä®·³]
+â— [ëª¨ì¡°ì¹¼ëŸ¼]
 
-    - Oracle DBMS¿¡¼­ Á¦°øÇØÁØ´Ù
+    - Oracle DBMSì—ì„œ ì œê³µí•´ì¤€ë‹¤
     
-    - rownum Çà¹øÈ£
+    - rownum í–‰ë²ˆí˜¸
       select uname, address, rownum from tb_student;
       
-    - rowid ÇàÀÇ ÁÖ¼Ò°ª
+    - rowid í–‰ì˜ ì£¼ì†Œê°’
       select uname, address, rowid from tb_student;
       
 /////////////////////////////////////////////////////////////////////
 
 
-¡Ü [rownum]
+â— [rownum]
 
--- ÁÙ¹øÈ£
+-- ì¤„ë²ˆí˜¸
 select hakno, uname, rownum from tb_student;
 
--- ÁÙ¹øÈ£¿¡ º°Äª ºÎ¿©ÇÏ±â
+-- ì¤„ë²ˆí˜¸ì— ë³„ì¹­ ë¶€ì—¬í•˜ê¸°
 select hakno, uname, rownum as rnum from tb_student;
 
--- ÁÙ¹øÈ£°¡ ¸ÕÀú ºÎ¿©µÇ°í Á¤·ÄµÈ´Ù
+-- ì¤„ë²ˆí˜¸ê°€ ë¨¼ì € ë¶€ì—¬ë˜ê³  ì •ë ¬ëœë‹¤
 select hakno, uname, rownum as rnum from tb_student order by uname;
 
--- ÁÙ¹øÈ£ 1~3 »çÀÌ Á¶È¸
+-- ì¤„ë²ˆí˜¸ 1~3 ì‚¬ì´ ì¡°íšŒ
 select hakno, uname, rownum from tb_student where rownum>=1 and rownum<=3;
 
--- ÁÙ¹øÈ£ 4~6 »çÀÌ Á¶È¸ (Á¶È¸ ¾ÈµÊ)
+-- ì¤„ë²ˆí˜¸ 4~6 ì‚¬ì´ ì¡°íšŒ (ì¡°íšŒ ì•ˆë¨)
 select hakno, uname, rownum from tb_student where rownum>=4 and rownum<=6;
 //////////////////////////////////////////////////////////////////////////
 
 
-¡Ü [rownumÀ» È°¿ëÇÑ ÆäÀÌÂ¡]
-   - rownumÀº ¸ðÁ¶Ä®·³ÀÌ¹Ç·Î Á¶°ÇÀý¿¡ Á÷Á¢ »ç¿ëÇÏÁö ¸»°í, ½ÇÁ¦Ä®·³À¸·Î 
-     ÀÎ½ÄÀ» ¸ÕÀú ½ÃÅ² µÚ »ç¿ëÇÒ °ÍÀ» ÃßÃµ
-   - rownumÄ®·³Àº ¼¿ÇÁÁ¶ÀÎ ÈÄ¿¡ ÁÙ ¹øÈ£¸¦ Ãß°¡ÇÏ°í Á¶°ÇÀý¿¡ È°¿ëÇÑ´Ù
+â— [rownumì„ í™œìš©í•œ íŽ˜ì´ì§•]
+   - rownumì€ ëª¨ì¡°ì¹¼ëŸ¼ì´ë¯€ë¡œ ì¡°ê±´ì ˆì— ì§ì ‘ ì‚¬ìš©í•˜ì§€ ë§ê³ , ì‹¤ì œì¹¼ëŸ¼ìœ¼ë¡œ 
+     ì¸ì‹ì„ ë¨¼ì € ì‹œí‚¨ ë’¤ ì‚¬ìš©í•  ê²ƒì„ ì¶”ì²œ
+   - rownumì¹¼ëŸ¼ì€ ì…€í”„ì¡°ì¸ í›„ì— ì¤„ ë²ˆí˜¸ë¥¼ ì¶”ê°€í•˜ê³  ì¡°ê±´ì ˆì— í™œìš©í•œë‹¤
    
-¹®) ÁÙ¹øÈ£(rownum)¸¦ ÀÌ¿ëÇØ¼­ ÁÙ¹øÈ£ 4Çà~6ÇàÀ» Á¶È¸
---1) ÀÌ¸§¼øÀ¸·Î Á¶È¸ (ÁÙ¹øÈ£±îÁö °°ÀÌ Á¤·Ä)
+ë¬¸) ì¤„ë²ˆí˜¸(rownum)ë¥¼ ì´ìš©í•´ì„œ ì¤„ë²ˆí˜¸ 4í–‰~6í–‰ì„ ì¡°íšŒ
+--1) ì´ë¦„ìˆœìœ¼ë¡œ ì¡°íšŒ (ì¤„ë²ˆí˜¸ê¹Œì§€ ê°™ì´ ì •ë ¬)
 select uname, hakno, address, rownum
 from tb_student order by uname;
 
 
---2) 1)ÀÇ °á°ú¸¦ ¼¿ÇÁÁ¶ÀÎ(AAÅ×ÀÌºí)ÇÏ°í ÁÙ¹øÈ£¸¦ Ãß°¡ÇÏ½Ã¿À
+--2) 1)ì˜ ê²°ê³¼ë¥¼ ì…€í”„ì¡°ì¸(AAí…Œì´ë¸”)í•˜ê³  ì¤„ë²ˆí˜¸ë¥¼ ì¶”ê°€í•˜ì‹œì˜¤
 select uname, hakno, address, rownum as rnum
 from (
         select uname, hakno, address
@@ -53,7 +53,7 @@ from (
       ) AA ;
 
 
---3) 2)ÀÇ °á°ú¸¦ BBÅ×ÀÌºí·Î ¸¸µé°í, ÁÙ¹øÈ£ 4Çà~6Çà±îÁö Á¶È¸ÇÏ½Ã¿À
+--3) 2)ì˜ ê²°ê³¼ë¥¼ BBí…Œì´ë¸”ë¡œ ë§Œë“¤ê³ , ì¤„ë²ˆí˜¸ 4í–‰~6í–‰ê¹Œì§€ ì¡°íšŒí•˜ì‹œì˜¤
 select uname, hakno, address, rnum
 from (
         select uname, hakno, address, rownum as rnum
@@ -65,7 +65,7 @@ from (
 where rnum>=4 and rnum<=6;
 
 
---4) 3)ÀÇ °á°ú¿¡¼­ Å×ÀÌºí º°Äª (AA, BB) »ý·«ÇÏ±â
+--4) 3)ì˜ ê²°ê³¼ì—ì„œ í…Œì´ë¸” ë³„ì¹­ (AA, BB) ìƒëžµí•˜ê¸°
 select *
 from (
         select uname, hakno, address, rownum as rnum
